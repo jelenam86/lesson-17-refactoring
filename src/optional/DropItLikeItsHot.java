@@ -16,7 +16,10 @@ public class DropItLikeItsHot {
 		 * When the thePigsTryToGetAtYa, drop it like it's hot. 
 		 * When aNiggaGetAnAttitude, drop it like it's hot.
 		 */
-		if (getWhoIsInTheCrib().equals("The Pimp") || getWhoThePigsAreAfter().equals(snoop) || getWhoHasAnAttitude().equals("a nigga"))
+		boolean thePimpIsInTheCrib = getWhoIsInTheCrib().equals("The Pimp");
+		boolean thePigsAreAfterSnoop = getWhoThePigsAreAfter().equals(snoop);
+		boolean niggaHasAnAttitude = getWhoHasAnAttitude().equals("a nigga");
+		if (thePimpIsInTheCrib || thePigsAreAfterSnoop || niggaHasAnAttitude)
 			System.out.println("Drop it like it's hot");
 	}
 
