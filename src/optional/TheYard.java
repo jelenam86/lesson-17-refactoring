@@ -7,15 +7,12 @@ import java.util.List;
 
 public class TheYard {
 
-	private String iceCreamFlavor;
-	private boolean cherryOnTop;
-	private String syrupFlavor;
-
+	private Milkshake milkshake;
 	private List<Boy> theBoys = new ArrayList<Boy>();
 
 	void bringAllTheBoysToTheYard() {
 		for (Boy aBoy : theBoys) {
-			aBoy.bringToTheYard(iceCreamFlavor, cherryOnTop, syrupFlavor);
+			aBoy.bringToTheYard(milkshake.getIceCreamFlavor(), milkshake.isCherryOnTop(), milkshake.getSyrupFlavor());
 		}
 	}
 
@@ -24,9 +21,7 @@ public class TheYard {
 	}
 
 	public void setMilkshake(String iceCreamFlavor, boolean cherryOnTop, String syrupFlavor) {
-		this.iceCreamFlavor = iceCreamFlavor;
-		this.cherryOnTop = cherryOnTop;
-		this.syrupFlavor = syrupFlavor;
+		this.milkshake = new Milkshake(iceCreamFlavor, cherryOnTop, syrupFlavor);
 	}
 
 	public static void main(String[] args) {
@@ -49,10 +44,43 @@ class Boy {
 	}
 
 	public void bringToTheYard(String iceCreamFlavor, boolean cherryOnTop, String syrupFlavor) {
-		if (cherryOnTop)
-			System.out.println("damn right, it's better than yours");
-		else
-			System.out.println("i could teach you, but i'd have to charge");
+		System.out.println(cherryOnTop ? "damn right, it's better than yours" : "i could teach you, but i'd have to charge");
 	}
 
+}
+
+class Milkshake {
+	private String iceCreamFlavor;
+	private boolean cherryOnTop;
+	private String syrupFlavor;
+
+	public Milkshake(String iceCreamFlavor, boolean cherryOnTop, String syrupFlavor) {
+		this.iceCreamFlavor = iceCreamFlavor;
+		this.cherryOnTop = cherryOnTop;
+		this.syrupFlavor = syrupFlavor;
+	}
+
+	public String getIceCreamFlavor() {
+		return iceCreamFlavor;
+	}
+
+	public void setIceCreamFlavor(String iceCreamFlavor) {
+		this.iceCreamFlavor = iceCreamFlavor;
+	}
+
+	public boolean isCherryOnTop() {
+		return cherryOnTop;
+	}
+
+	public void setCherryOnTop(boolean cherryOnTop) {
+		this.cherryOnTop = cherryOnTop;
+	}
+
+	public String getSyrupFlavor() {
+		return syrupFlavor;
+	}
+
+	public void setSyrupFlavor(String syrupFlavor) {
+		this.syrupFlavor = syrupFlavor;
+	}
 }
