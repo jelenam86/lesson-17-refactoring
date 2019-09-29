@@ -7,20 +7,29 @@ import java.awt.Color;
  *  	Change Method Signature
  */
 
-
-
 public class WorkIt {
 
-	void putMyThingDown(int missySneakerSize, Color missyCapColor, String bling, int numberOfGrammyAwards, boolean isSupaDupaFly) {
-		flipIt(missySneakerSize, missyCapColor, bling);
+	void putMyThingDown(LongParameter parameter, int numberOfGrammyAwards, boolean isSupaDupaFly) {
+		flipIt(parameter);
 	}
 
-	void flipIt(int missySneakerSize, Color missyCapColor, String bling) {
-		reverseIt(missySneakerSize, missyCapColor, bling);
+	void flipIt(LongParameter parameter) {
+		reverseIt(parameter);
 	}
 
-	void reverseIt(int missySneakerSize, Color missyCapColor, String bling) {
-		System.out.println(missySneakerSize + bling + missyCapColor);
+	void reverseIt(LongParameter parameter) {
+		System.out.println(parameter.missySneakerSize + parameter.bling + parameter.missyCapColor);
 	}
+}
 
+class LongParameter {
+	public int missySneakerSize;
+	public Color missyCapColor;
+	public String bling;
+
+	public LongParameter(int missySneakerSize, Color missyCapColor, String bling) {
+		this.missySneakerSize = missySneakerSize;
+		this.missyCapColor = missyCapColor;
+		this.bling = bling;
+	}
 }
